@@ -4,7 +4,7 @@ import Profile from "./Profile"
 import Login from "./Login"
 import { Provider } from "react-redux"
 import appStore from "./utils/appStore"
-import { Feed } from "./Feed"
+import Feed from "./Feed"
 function App() {
   
 
