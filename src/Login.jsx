@@ -9,6 +9,7 @@ const Login = () => {
 
   const [email,setEmail]=useState("samu@datti.com")
   const [password,setPassword]=useState("samu@123")
+  const [error,setError]=useState("");
   const dispatch=useDispatch()
   
 const handleLogin=async ()=>{
@@ -24,6 +25,7 @@ dispatch(addUser(res.data))
 return navigate("/Feed")
 }
 catch(err){
+  setError(err?.response?.data || "something went wrong")
   console.error(err)
 }}
 
@@ -49,8 +51,9 @@ catch(err){
   <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs my-2"
   value={password}
   onChange={(e)=>setPassword(e.target.value)} />
-  
+  <p className='text-red-800'>{error}</p>
 </label>
+
     <div className="card-actions justify-center">
       <button className="btn btn-primary" onClick={handleLogin}>Login</button>
     </div>
