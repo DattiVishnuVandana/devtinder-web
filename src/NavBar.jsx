@@ -24,10 +24,10 @@ return navigate("/login")
   </div>
   {user &&
   <div className="flex gap-2">
-  
+    <p>welcome,{user.firstName}</p>
     <div className="dropdown dropdown-end mx-5">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-      {/* <p>welcome,{user.firstName}</p> */}
+    
         <div className="w-10 rounded-full">
         <img src={user.photoUrl || "https://2.bp.blogspot.com/-LSiWgI-y66E/WlBwkJS0SLI/AAAAAAAABJA/zTZtxQQRDs8xdU8YVsqAtmR6Jox3kUIwACLcBGAs/s1600/Samantha-smiling-saree-images-pics.jpg"} alt="User" />
           {/* <img

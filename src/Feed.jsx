@@ -8,14 +8,15 @@ import UserCard from './UserCard'
 const Feed = () => {
     const dispatch=useDispatch()
     const feed=useSelector(store=>store.feed)
-    console.log("feed"+feed);
-    // if (feed)
-    //     return
-
+    // console.log("feed"+feed);
+  
     const getFeed=async ()=>{
         try{
+              if (feed)
+        return
+
 const res=await axios.get(BASE_URL+"/user/feed",{withCredentials:true});
-console.log(res.data);
+// console.log(res.data);
 dispatch(addFeed(res.data))
 
 
@@ -31,7 +32,7 @@ useEffect(()=>{
   return (
     feed?.data && feed.data.length > 0 ? (
         <div>
-            <UserCard user={feed.data[0]} />
+            <UserCard user={feed.data[1]} />
         </div>
     ) : (
         <p>Loading feed...</p>
