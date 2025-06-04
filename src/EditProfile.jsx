@@ -8,8 +8,8 @@ import { BASE_URL } from './constants';
 const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user?.firstName || "");
   const [lastName, setLastName] = useState(user?.lastName || "");
-  const [age, setAge] = useState(user?.age || "");
-  const [gender, setGender] = useState(user?.gender || "");
+  const [age, setAge] = useState(user?.age || 0);
+  const [gender, setGender] = useState(user?.gender || "others" );
   const [about, setAbout] = useState(user?.about || "");
   const [photoUrl, setPhotoUrl] = useState(user?.photoUrl || "");
   const [error, setError] = useState("");
@@ -110,7 +110,7 @@ const EditProfile = ({ user }) => {
 
       {/* Preview Card */}
       <div className="flex flex-col items-center gap-6 my-10 mx-7">
-        <UserCard user={{ firstName, lastName, photoURL: photoUrl, age, gender, about }} />
+        <UserCard user={{ firstName, lastName,  photoUrl, age, gender, about }} />
       </div>
 
       {/* Toast Message */}
@@ -125,4 +125,4 @@ const EditProfile = ({ user }) => {
   );
 };
 
-export default EditProfile;
+export default EditProfile;    
