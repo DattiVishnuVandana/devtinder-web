@@ -1,7 +1,0 @@
-const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [age, setAge] = useState("");
-    const [gender, setGender] = useState("");
-    const [about, setAbout] = useState("");
-    const [photoUrl, setPhotoUrl] = useState("");
-    const [error, setError] = useState(""); // ✅ Defined `error`

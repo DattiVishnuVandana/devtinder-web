@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import Footer from './Footer'
@@ -7,9 +7,11 @@ import { useDispatch } from 'react-redux'
 import { addUser } from './utils/userSlice'
 import axios from 'axios'
 
+
 const Body = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate();
+  const [isLog,setIsLog]=useState(true)
   const fetchUser=async ()=>{
    try{
     const res=await axios.get("http://localhost:7777/profile",
@@ -35,9 +37,11 @@ const Body = () => {
     <div>
    
          <NavBar/>
-         <div className="text-center">
-           <Link to="/login"><span>Login / Sign up</span></Link>
-         </div>
+     {isLog && <div className="text-center">
+           <Link to="/login" onClick={()=>setIsLog(!isLog)}><span>Login / Sign up</span>
+       
+           </Link>
+         </div> }    
         
        <Outlet/> 
      <Footer/>
