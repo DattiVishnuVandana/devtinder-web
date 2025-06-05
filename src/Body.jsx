@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import NavBar from './NavBar'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 import { BASE_URL } from './constants'
 import { useDispatch } from 'react-redux'
@@ -35,9 +35,12 @@ const Body = () => {
     <div>
    
          <NavBar/>
-    
+         <div className="text-center">
+           <Link to="/login"><span>Login / Sign up</span></Link>
+         </div>
+        
        <Outlet/> 
-     {/* <Footer/> */}
+     <Footer/>
     </div>
   )
 }

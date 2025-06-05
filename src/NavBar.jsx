@@ -41,10 +41,17 @@ return navigate("/login")
         <li>
           <Link to="/profile" className="justify-between">
             Profile
-            <span className="badge">New</span>
+            <span className="badge">📸👩🏻👨🏻</span>
           </Link>
-        </li>
-        <li><a>Settings</a></li>
+        </li> 
+        <li>
+          
+          <Link to="/connections">connection🤜🏻🤛🏻🩵💜</Link>
+          </li>
+           <li>
+          
+          <Link to="/requests">Requests🤜🏻🤛🏻🩵💜</Link>
+          </li>
         <li><a onClick={handleLogout}>Logout</a></li>
       </ul>
     </div>
