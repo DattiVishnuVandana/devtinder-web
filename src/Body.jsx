@@ -16,7 +16,7 @@ const Body = () => {
   const [isLog,setIsLog]=useState(false)
   const fetchUser=async ()=>{
    try{
-    const res=await axios.get("http://localhost:7777/profile",
+    const res=await axios.get(BASE_URL+"/profile",
       {withCredentials:true
 
     }
