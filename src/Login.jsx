@@ -33,7 +33,7 @@ const res=await axios.post(BASE_URL+"/signup",{firstName,lastName,email,password
 
 const handleLogin=async ()=>{
   try{
-const res=await axios.post("http://localhost:7777/login",{
+const res=await axios.post(BASE_URL+"/login",{
   email,password
 },{
   withCredentials:true//**** */
