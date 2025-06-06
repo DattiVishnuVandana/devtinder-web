@@ -132,6 +132,7 @@ import { addUser } from './utils/userSlice';
 import UserCard from './UserCard';
 import axios from 'axios';
 import { BASE_URL } from './constants';
+import { useNavigate } from 'react-router-dom';
 
 const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user?.firstName || "");
@@ -143,6 +144,7 @@ const EditProfile = ({ user }) => {
   const [error, setError] = useState("");
   const [showToast, setShowToast] = useState(false);
   const dispatch = useDispatch();
+  const navigate=useNavigate();
 
   const saveProfile = async () => {
     setError("");
@@ -173,7 +175,11 @@ const EditProfile = ({ user }) => {
       );
       dispatch(addUser(res?.data?.data));
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 3000);
+     setTimeout(() => {
+  setShowToast(false);
+  navigate("/Feed");
+}, 2000);
+      
     } catch (err) {
       const message =
         err?.response?.data?.error ||

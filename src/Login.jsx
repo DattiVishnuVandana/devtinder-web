@@ -7,6 +7,7 @@ import { BASE_URL } from './constants'
 
 const Login = () => {
   const navigate=useNavigate();
+
   const [firstName,setFirstName]=useState("")
     const [lastName,setLastName]=useState("")
   const [email,setEmail]=useState("")

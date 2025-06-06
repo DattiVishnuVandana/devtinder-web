@@ -5,7 +5,7 @@ import Login from "./Login"
 import { Provider } from "react-redux"
 import appStore from "./utils/appStore"
 import Feed from "./Feed";
-import Connections from "./connections"
+import Connections from "./Connections"
 import { Requests } from "./Requests"
 
 

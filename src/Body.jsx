@@ -6,12 +6,14 @@ import { BASE_URL } from './constants'
 import { useDispatch } from 'react-redux'
 import { addUser } from './utils/userSlice'
 import axios from 'axios'
+import Feed from './Feed'
+import Login from './Login'
 
 
 const Body = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate();
-  const [isLog,setIsLog]=useState(true)
+  const [isLog,setIsLog]=useState(false)
   const fetchUser=async ()=>{
    try{
     const res=await axios.get("http://localhost:7777/profile",
@@ -33,16 +35,16 @@ const Body = () => {
   useEffect(()=>{
     fetchUser();
   },[])
+  
   return (
     <div>
    
          <NavBar/>
-     {isLog && <div className="text-center">
-           <Link to="/login" onClick={()=>setIsLog(!isLog)}><span>Login / Sign up</span>
+         <div className="home">
+          
+         </div>
        
-           </Link>
-         </div> }    
-        
+      
        <Outlet/> 
      <Footer/>
     </div>
